@@ -9,6 +9,7 @@ djangorestframework = "*"
 django-filter = "*"
 markdown = "*"
 flake8 = "*"
+djangorestframework-jsonapi = "*"
 
 [dev-packages]
 
