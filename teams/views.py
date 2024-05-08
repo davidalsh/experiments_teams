@@ -1,5 +1,3 @@
-from rest_framework import status
-from rest_framework.response import Response
 from rest_framework_json_api import views as viewsets
 
 from teams import models
