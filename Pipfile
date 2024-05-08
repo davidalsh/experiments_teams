@@ -10,6 +10,7 @@ django-filter = "*"
 markdown = "*"
 flake8 = "*"
 djangorestframework-jsonapi = "*"
+django-mptt = "*"
 
 [dev-packages]
 

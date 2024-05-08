@@ -22,6 +22,7 @@ THIRD_PARTY_APPS = [
     'rest_framework',
     'rest_framework_json_api',
     'django_filters',
+    'mptt',
 ]
 
 LOCAL_APPS = [
