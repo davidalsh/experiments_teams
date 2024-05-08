@@ -32,3 +32,15 @@ class ExperimentCreateSerializer(serializers.ModelSerializer):
         if not 1 <= len(value) <= 2:
             raise serializers.ValidationError('Please ensure the experiment has exactly 1 or 2 teams assigned.')
         return value
+
+
+class ExperimentUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Experiment
+        fields = ('id', 'teams')
+
+    def validate_teams(self, value):
+        if self.instance.teams_count != len(set(value)):
+            raise serializers.ValidationError('Please ensure the provided data has the same number of teams '
+                                              'as the experiment.')
+        return value
