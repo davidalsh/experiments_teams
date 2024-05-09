@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "9ac1d7d2-3e38-459f-8996-8a67f2f29de1",
+		"name": "olx-assignment-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32374398"
+	},
+	"item": [
+		{
+			"name": "experiments",
+			"item": [
+				{
+					"name": "experiments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/experiments/?filter[team_name]=CHILD1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"experiments",
+								""
+							],
+							"query": [
+								{
+									"key": "filter[team_name]",
+									"value": "CHILD1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "experiments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"type\": \"Experiment\",\n        \"attributes\": {\n            \"description\": \"TEST\",\n            \"sample_ratio\": 0.1\n        },\n        \"relationships\": {\n            \"teams\": {\n                \"data\": [\n                    {\n                        \"type\": \"Team\",\n                        \"id\": \"2e3d99df-7754-4a5d-a260-2db4591b4eef\"\n                    },\n                                        {\n                        \"type\": \"Team\",\n                        \"id\": \"c5a9ffa7-95da-40f5-8d09-cc82398138df\"\n                    }\n                ]\n            }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/experiments/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"experiments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "experiments",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"type\": \"Experiment\",\n        \"id\": \"1c851caf-8a79-4423-83fa-6f647a3f0843\",\n        \"relationships\": {\n            \"teams\": {\n                \"data\": [\n                    {\n                        \"type\": \"Team\",\n                        \"id\": \"2e3d99df-7754-4a5d-a260-2db4591b4eef\"\n                    }\n                ]\n            }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/experiments/1c851caf-8a79-4423-83fa-6f647a3f0843/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"experiments",
+								"1c851caf-8a79-4423-83fa-6f647a3f0843",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "teams",
+			"item": [
+				{
+					"name": "teams",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/teams",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"teams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "teams",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"type\": \"Team\",\n        \"attributes\": {\n            \"name\": \"TEST2\"\n        },\n        \"relationships\": {\n            \"parent\": {\n                \"data\": null\n            }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/teams/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"teams",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}
