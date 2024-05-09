@@ -12,9 +12,10 @@ class TeamNameFilterBackend(filters.FilterSet):
 
     @staticmethod
     def filter_children(queryset, _, value):
-        ids_exclude = []
+        ids_matched = []
         for obj in queryset:
             for team in obj.teams.all():
-                if value.lower() not in team.name.lower() and not team.get_descendants().filter(name__icontains=value):
-                    ids_exclude.append(obj.id)
-        return queryset.exclude(id__in=ids_exclude)
+                if value.lower() in team.name.lower() or team.get_descendants().filter(name__icontains=value):
+                    ids_matched.append(obj.id)
+                    break
+        return queryset.filter(id__in=ids_matched)
