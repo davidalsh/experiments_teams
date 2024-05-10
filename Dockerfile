@@ -10,8 +10,6 @@ RUN pip install pipenv && pipenv install --system
 
 COPY . /app/
 
-RUN python manage.py migrate
+RUN chmod +x /app/script.sh
 
-EXPOSE 8000
-
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+ENTRYPOINT ["./script.sh"]

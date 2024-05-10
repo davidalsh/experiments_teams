@@ -11,6 +11,7 @@ markdown = "*"
 flake8 = "*"
 djangorestframework-jsonapi = "*"
 django-mptt = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
