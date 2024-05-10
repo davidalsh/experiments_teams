@@ -7,7 +7,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'test__django_**%%')
 
 DEBUG = os.environ.get('DEBUG', True)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 DJANGO_APPS = [
     'django.contrib.admin',
